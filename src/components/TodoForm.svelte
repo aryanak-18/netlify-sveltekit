@@ -1,16 +1,37 @@
 <script>
-  import {addTodo} from '../stores/todoStore.js'
-  let todo='';
-  const handleSubmit=()=>{
-    addTodo(todo);
-    todo='';
-    console.log("Submitting")
-  }
+  import { addTodo } from "../stores/todoStore.js";
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+  let todo = "";
+  // const handleSubmit = () => {
+  //   addTodo(todo);
+  //   todo = "";
+  //   console.log("Submitting");
+  // };
 </script>
-<form class="my-6" on:submit|preventDefault={handleSubmit}>
+
+<form
+  class="my-6"
+  on:submit|preventDefault={() => {
+    dispatch("add", {
+      toDo: todo,
+    });
+    todo = "";
+  }}
+>
   <div class="flex flex-col text-sm mb-2">
     <label class="font-bold mb-2 text-gray-800" for="todo">Todo</label>
-    <input type="text" bind:value={todo} name="todo" placeholder="Watcha Gotta do?" class="appearance-none shadow-sm border border-gray-200 p-2 focus:outline-none focus:border-gray-500 rounded-lg"/>
+    <input
+      type="text"
+      bind:value={todo}
+      name="todo"
+      placeholder="Watcha Gotta do?"
+      class="appearance-none shadow-sm border border-gray-200 p-2 focus:outline-none focus:border-gray-500 rounded-lg"
+    />
   </div>
-  <button type="submit" class="w-full shadow-sm rounded bg-blue-500 hover:bg-blue-600 text-white py-2 px-4">Submit</button>
+  <button
+    type="submit"
+    class="w-full shadow-sm rounded bg-blue-500 hover:bg-blue-600 text-white py-2 px-4"
+    >Submit</button
+  >
 </form>
