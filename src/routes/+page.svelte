@@ -8,6 +8,6 @@
     <h1 class="text-2xl font-bold text-center text-gray-800 md:text-3xl">MyTodos</h1>
     <TodoForm/>
     {#each $todos as todo}
-    <Todo todo={todo} index={todo.id}/>
+    <Todo todo={todo}/>
     {/each}
 </main>
