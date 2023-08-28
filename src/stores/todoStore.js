@@ -16,15 +16,11 @@ export const deleteTodo=(id)=>{
 
 export const toggleTodoCompleted=(id)=>{
     todos.update(todos=>{
-        let index=-1;
         for(let i=0; i<todos.length;i++){
             if(todos[i].id===id){
-                index=i;
+                todos[i].completed=!todos[i].completed;
                 break;
             }
-        }
-        if(index!==-1){
-            todos[index].completed=!todos[index].completed;
         }
         return todos;
     })
