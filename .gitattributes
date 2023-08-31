@@ -1,1 +1,5 @@
-.svelte linguist-language=Svelte
+/site/** -linguist-detectable
+/test/**/samples/** -linguist-detectable
+/**/*.svelte linguist-detectable
+*.js linguist-detectable=false
+*.svelte linguist-detectable=true
