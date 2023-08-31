@@ -1,4 +1,1 @@
-/site/** -linguist-detectable
-/test/**/samples/** -linguist-detectable
-/**/*.svelte linguist-detectable
-*.svelte linguist-detectable=true
+.svelte linguist-language=Svelte
