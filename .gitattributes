@@ -1,5 +1,5 @@
 /site/** -linguist-detectable
 /test/**/samples/** -linguist-detectable
-/**/*.svelte linguist-detectable
+/**/*.svelte linguist-detectable = true
 *.js linguist-detectable=false
 *.svelte linguist-detectable=true
